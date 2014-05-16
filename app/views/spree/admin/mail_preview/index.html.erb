@@ -1,0 +1,24 @@
+<h3>Order Emails (for recent orders)</h3>
+<ul>
+  <% @order_info.each do |order_info| %>
+    <li>
+      <%= order_info %>
+      (<%= link_to :confirm, "mail_preview/order/confirm/#{order_info}" %>, <%= link_to :cancel, "mail_preview/order/cancel/#{order_info}" %>)
+    </li>
+  <% end %>
+</ul>
+
+<h3>Shipment Emails (for recent shipments)</h3>
+<ul>
+  <% @shipment_info.each do |shipment_info| %>
+      <li>
+        <%= shipment_info %>
+        (<%= link_to :shipped, "mail_preview/shipment/#{shipment_info}" %>)
+      </li>
+  <% end %>
+</ul>
+
+<h3>User Emails</h3>
+<ul>
+  <li><%= link_to 'Password Reset', "mail_preview/user/reset_password/#{@user_info}" %></li>
+</ul>
