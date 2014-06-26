@@ -6,14 +6,14 @@
 </p>
 <p class="link">
   To view the complete details of your order use the following link:
-  <%= link_to(order_url(@shipment.order, :host => Spree::Config[:site_url]), order_url(@shipment.order, :host => Spree::Config[:site_url])) %>
+  <%= link_to(order_url(@shipment.order, :host => Spree::Config[:site_url]), order_url(@shipment.order, :host => Spree::Config[:site_url]), target: '_blank') %>
 </p>
 
 <% if @shipment.tracking.present? %>
   <h2><span>Tracking Information</span></h2>
   <p class="tracking">
     Tracking/shipment number:
-    <%= link_to @shipment.tracking, "http://google.com/search?&q=#{@shipment.tracking}" %>
+    <%= link_to @shipment.tracking, "http://google.com/search?&q=#{@shipment.tracking}", target: '_blank' %>
     <%= Spree.t('shipment_mailer.shipped_email.track_link', :url => @shipment.tracking_url) if @shipment.tracking_url %>
   </p>
 <% end %>
