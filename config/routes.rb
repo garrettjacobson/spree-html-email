@@ -5,5 +5,6 @@ Spree::Core::Engine.routes.draw do
     get 'mail_preview/order/cancel/:number', :to => "mail_preview#show_order_cancel", as: :mail_preview_order_cancel
     get 'mail_preview/shipment/:number', :to => "mail_preview#show_shipment", as: :mail_preview_shipment
     get 'mail_preview/user/reset_password/:id', :to => "mail_preview#show_user_reset_password", as: :mail_preview_user_reset_password
+    get 'mail_preview/user/welcome_email/:id', :to => "mail_preview#show_welcome_email", as: :mail_preview_user_welcome_email
   end
 end

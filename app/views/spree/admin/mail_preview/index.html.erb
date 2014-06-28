@@ -20,5 +20,6 @@
 
 <h3>User Emails</h3>
 <ul>
+  <li><%= link_to 'Welcome Email', "mail_preview/user/welcome_email/#{@user_info}" %></li>
   <li><%= link_to 'Password Reset', "mail_preview/user/reset_password/#{@user_info}" %></li>
 </ul>

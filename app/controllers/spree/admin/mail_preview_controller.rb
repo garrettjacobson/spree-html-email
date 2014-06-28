@@ -25,4 +25,9 @@ class Spree::Admin::MailPreviewController < Spree::Admin::BaseController
     @edit_password_reset_url = 'https://this-is-a-fake-url-but-would-be-real'
     render 'spree/user_mailer/reset_password_instructions', layout: 'spree/layouts/email'
   end
+
+  def show_welcome_email
+    @user = Spree::User.find_by_id(params[:id])
+    render 'spree/user_mailer/welcome_email', layout: 'spree/layouts/email'
+  end
 end
